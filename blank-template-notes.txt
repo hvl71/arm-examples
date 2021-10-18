@@ -1,0 +1,13 @@
+From https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-create-first-template?tabs=azure-powershell
+
+Connect-AzAccount
+
+#not necessary if only a single SubscriptionName
+Set-AzContext SubscriptionName
+
+New-AzResourceGroup -Name my-res-rg -Location "West US"
+
+$templateFile = .\blank-template.json 
+New-AzResourceGroupDeployment -Name blanktemplate -ResourceGroupName my-res-rg -TemplateFile $templateFile
+
+
