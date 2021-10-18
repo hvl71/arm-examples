@@ -17,6 +17,12 @@ New-AzResourceGroupDeployment -Name blanktemplate -ResourceGroupName my-res-rg -
 
 New-AzResourceGroupDeployment -Name addstorage -ResourceGroupName my-res-rg -TemplateFile $templateFile
 
+#Now try to parameterize the previously hardcoded storage account name
+#https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-add-parameters?tabs=azure-powershell
+
+New-AzResourceGroupDeployment -Name addnameparameter -ResourceGroupName my-res-rg -TemplateFile $templateFile -storageName "mystorage123hvl71"
+
+
 
 
 
