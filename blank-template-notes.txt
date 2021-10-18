@@ -1,4 +1,4 @@
-From https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-create-first-template?tabs=azure-powershell
+#https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-create-first-template?tabs=azure-powershell
 
 Connect-AzAccount
 
@@ -9,5 +9,14 @@ New-AzResourceGroup -Name my-res-rg -Location "West US"
 
 $templateFile = .\blank-template.json 
 New-AzResourceGroupDeployment -Name blanktemplate -ResourceGroupName my-res-rg -TemplateFile $templateFile
+
+#at this point you should have deployed a template successfully without provisioning any resources
+
+#now we want to provision storage using this tutorial
+#https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-add-resource?tabs=azure-powershell
+
+New-AzResourceGroupDeployment -Name addstorage -ResourceGroupName my-res-rg -TemplateFile $templateFile
+
+
 
 
